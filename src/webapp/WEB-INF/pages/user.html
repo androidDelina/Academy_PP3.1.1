@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+</head>
+<body>
+
+<h1>User Details</h1>
+
+<p>
+    <strong>Name:</strong>
+    <span th:text="${user.name}">name</span>
+</p>
+
+<p>
+    <strong>Surname:</strong>
+    <span th:text="${user.surname}">surname</span>
+</p>
+
+<p>
+    <strong>Sex:</strong>
+    <span th:text="${user.sex == 'male' ? 'Male' : 'Female'}">sex</span>
+</p>
+
+<p>
+    <strong>City:</strong>
+    <span th:text="${user.city}">city</span>
+</p>
+
+<form th:action="@{/users/user/edit}" method="get">
+    <input type="hidden" name="id" th:value="${user.id}" />
+    <button type="submit">Edit</button>
+</form>
+
+<form th:action="@{/users/user(id=${user.getId()})}" th:method="post">
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>
