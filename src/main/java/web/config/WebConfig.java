@@ -105,10 +105,11 @@ public class WebConfig implements WebMvcConfigurer {
 
     private Properties jpaProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");  // Укажите ваш диалект базы данных
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");  // Управление схемой БД (update, validate, create и т.д.)
-        properties.setProperty("hibernate.show_sql", "true");  // Показывать SQL-запросы в логе
-        properties.setProperty("hibernate.format_sql", "true");  // Форматирование SQL-запросов в логе
+        properties.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));  // Укажите ваш диалект базы данных
+        properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));  // Управление схемой БД (update, validate, create и т.д.)
+        properties.setProperty("hibernate.show_sql", env.getProperty("hibernate.show_sql"));  // Показывать SQL-запросы в логе
+        properties.setProperty("hibernate.format_sql", env.getProperty("hibernate.format_sql"));  // Форматирование SQL-запросов в логе
         return properties;
     }
+
 }
