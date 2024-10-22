@@ -1,7 +1,8 @@
 package com.dvorzhetskaya.Academy_PP311.controller;
 
 import com.dvorzhetskaya.Academy_PP311.model.User;
-import com.dvorzhetskaya.Academy_PP311.service.ServiceImpl;
+import com.dvorzhetskaya.Academy_PP311.service.AppService;
+import com.dvorzhetskaya.Academy_PP311.service.AppServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UsersController {
 
-    private ServiceImpl service;
+    private AppService service;
 
     @Autowired
-    public UsersController(ServiceImpl service) {
+    public UsersController(AppServiceImpl service) {
         this.service = service;
     }
 

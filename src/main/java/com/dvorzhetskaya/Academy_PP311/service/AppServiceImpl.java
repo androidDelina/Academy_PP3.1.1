@@ -3,16 +3,17 @@ package com.dvorzhetskaya.Academy_PP311.service;
 import com.dvorzhetskaya.Academy_PP311.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.dvorzhetskaya.Academy_PP311.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@org.springframework.stereotype.Service
-public class ServiceImpl implements Service {
+@Service
+public class AppServiceImpl implements AppService {
 
     private UserRepository userRepository;
 
     @Autowired
-    public ServiceImpl(UserRepository userRepository) {
+    public AppServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
