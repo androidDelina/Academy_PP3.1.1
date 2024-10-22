@@ -15,7 +15,7 @@ public class UsersController {
     private AppService service;
 
     @Autowired
-    public UsersController(AppServiceImpl service) {
+    public UsersController(AppService service) {
         this.service = service;
     }
 
